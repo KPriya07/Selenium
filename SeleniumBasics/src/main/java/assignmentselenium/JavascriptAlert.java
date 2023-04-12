@@ -32,8 +32,10 @@ public class JavascriptAlert {
 		driver.switchTo().alert().sendKeys("Hello");
 		driver.switchTo().alert().accept();
 		
-		
-		
+		driver.get("https://selenium.obsqurazone.com/table-pagination.php");
+		WebElement tablename=driver.findElement(By.xpath("//tr[1]//th[1]"));
+		String name=tablename.getText();
+		System.out.println("My"+name+"is Priya");
 
 	}
 
