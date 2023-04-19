@@ -1,13 +1,14 @@
-package KeyboardMouseInteractions;
+package assignmentselenium;
+
+import java.util.List;
 
 import org.openqa.selenium.By;
-import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 
-public class KeyBoardExample {
+public class ForLoopAndClick {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
@@ -16,14 +17,15 @@ public class KeyBoardExample {
 		co.addArguments("--remote-allow-origins=*");
 		WebDriver driver=new ChromeDriver(co);
 		driver.manage().window().maximize();
-		driver.get("https://www.amazon.in/");
-		WebElement searchfield=driver.findElement(By.xpath("//input[@id='twotabsearchtextbox']"));
-		//searchfield.sendKeys("Bags"+Keys.ENTER);//will search for bags
-		//searchfield.sendKeys("Bags"+Keys.ENTER);
-		searchfield.sendKeys("Bags");
-		searchfield.sendKeys(Keys.chord(Keys.CONTROL,"A"));
-		searchfield.sendKeys(Keys.BACK_SPACE);
-		
+		driver.get("https://selenium.obsqurazone.com/bootstrap-dual-list.php");
+		int i=0;
+	
+		List<WebElement> options=driver.findElements(By.xpath("//select[@id='bootstrap-duallistbox-nonselected-list_duallistbox_demo1[]']//option"));
+		int s=options.size();
+		for(i=0;i<s;i++) {
+			options.get(0).click();
+			options=driver.findElements(By.xpath("//select[@id='bootstrap-duallistbox-nonselected-list_duallistbox_demo1[]']//option"));	
+	}
 	}
 
 }

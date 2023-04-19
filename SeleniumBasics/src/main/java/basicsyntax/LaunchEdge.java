@@ -10,6 +10,7 @@ public class LaunchEdge {
 		System.setProperty("webdriver.edge.driver", "D:\\EdgeDriver\\msedgedriver.exe");
 		WebDriver driver=new EdgeDriver();
 		driver.manage().window().maximize();
+		
 	}
 
 }
