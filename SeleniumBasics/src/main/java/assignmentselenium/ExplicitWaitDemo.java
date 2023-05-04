@@ -37,6 +37,7 @@ public class ExplicitWaitDemo {
 		WebElement email=driver.findElement(By.xpath("//p[@class='card-text text-center p-3']"));
 		String txtemail=email.getText();
 		System.out.println(txtemail);
+		
 	}
 
 }
